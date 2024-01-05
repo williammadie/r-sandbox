@@ -1,0 +1,27 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fetch repository and Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v1
+      with:
+        r-version: 4.1
+
+    - name: Install R dependencies
+      run: |
+        R -e 'install.packages(c("devtools", "testthat"))'
+
+    - name: Run tests
+      run: |
+        R -e 'devtools::test()'

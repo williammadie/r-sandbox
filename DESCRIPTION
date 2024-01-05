@@ -1,0 +1,16 @@
+Package: r_sandbox
+Type: Package
+Title: R-Sandbox
+Version: 0.0.1
+Date: 2023-01-05
+Authors@R: person("William M.")
+Maintainer: William M
+Description: Just a sandbox for testing stuff.
+Depends: R (>= 4.0.0)
+Imports: dplyr, R.utils, testthat
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+Language: en-US
+RoxygenNote: 7.2.1
