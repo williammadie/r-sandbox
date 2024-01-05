@@ -5,7 +5,7 @@ Version: 0.0.1
 Date: 2023-01-05
 Authors@R: person("William M.")
 Maintainer: William M
-Description: Just a sandbox for testing stuff.
+Description: Just a sandbox for testing stuff with a primary focus on testthat framework.
 Depends: R (>= 4.0.0)
 Imports: testthat
 License: GPL-3
