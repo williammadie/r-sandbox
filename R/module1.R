@@ -1,1 +1,3 @@
-add_one <- function(x) 99 + 1
+add_one <- function(x) x + 1
+
+remove_one <- function(x) x - 1

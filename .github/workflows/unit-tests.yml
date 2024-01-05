@@ -31,7 +31,10 @@ jobs:
         cache-name: cache-r-libs
       with:
         path: ${{ env.R_LIBS_USER }}
-        key: ${{ runner.os }}-build-${{ env.cache-name }}
+        # If key changes, libraries will be reinstalled (regenerating cache)
+        # We use DECRIPTION file for this key as it needs to be changed for adding
+        # dependencies
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/DESCRIPTION') }}
         restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}
 
     - name: Install R dependencies
@@ -39,5 +42,6 @@ jobs:
         R -e 'install.packages(c("devtools", "testthat"))'
 
     - name: Run tests
+      # This command runs tests and returns appropriate status code
       run: |
-        R -e 'devtools::test()'
+        R -e 'res=devtools::test();df=as.data.frame(res);if(sum(df$failed) > 0 || any(df$error)) {q(status=1)}'
