@@ -1,5 +1,20 @@
 # Sandbox for learning purposes
 
+## Project Structure
+
+```bash
+.
+├── DESCRIPTION
+├── man
+├── NAMESPACE
+├── R
+│   └── module1.R
+├── README.md
+└── tests
+    └── testthat
+        └── test_module1.R
+```
+
 ## Setup tests
 
 1. Create a correct `DESCRIPTION` file
