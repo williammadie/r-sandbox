@@ -7,7 +7,7 @@ Authors@R: person("William M.")
 Maintainer: William M
 Description: Just a sandbox for testing stuff.
 Depends: R (>= 4.0.0)
-Imports: dplyr, R.utils, testthat
+Imports: testthat
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

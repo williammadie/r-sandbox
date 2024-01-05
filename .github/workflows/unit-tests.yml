@@ -8,10 +8,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
     - name: Fetch repository and Checkout code
       uses: actions/checkout@v2
+
+    # Dependencies needed for installing R dependencies
+    - name: Install cURL
+      run: |
+        sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
 
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
